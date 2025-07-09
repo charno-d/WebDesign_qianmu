@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品中心 - 消费类VCSEL</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      /* 导航栏背景颜色 */
+      #primary-header {
+        background-color: #2A5D8A !important;
+      }
+    
+      /* 导航链接文字颜色 */
+      #primary-header .navbar-nav .nav-item .nav-link {
+        color: #FFFFFF !important;
+      }
+    
+      /* 导航链接悬停和激活状态 */
+      #primary-header .navbar-nav .nav-item .nav-link:hover,
+      #primary-header .navbar-nav .nav-item .nav-link.active {
+        color: #87CEEB !important;
+      }
+    
+      /* 侧边菜单背景色 */
+      .offcanvas {
+        background-color: #2A5D8A !important;
+      }
+    
+      /* 关闭按钮颜色 */
+      .btn-close {
+        filter: invert(1) !important;
+      }
+      
+      /* 悬停下拉菜单样式 */
+      .dropdown-hover {
+        position: relative;
+      }
+      .dropdown-hover:hover .dropdown-menu {
+        display: block;
+        animation: fadeIn 0.3s ease;
+      }
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: rgba(42, 93, 138, 0.98);
+        min-width: 200px;
+        padding: 5px 0 0 0;
+        margin: 0;
+        border: none;
+        z-index: 1000;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      }
+      .dropdown-item {
+        color: white;
+        padding: 12px 20px;
+        display: block;
+        transition: all 0.3s ease;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+      .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+        color: #87CEEB;
+        padding-left: 25px;
+      }
+      .dropdown-hover::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background: transparent;
+      }
+      .dropdown-hover:hover::after {
+        display: block;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      /* 产品布局样式 */
+      .product-container {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        gap: 30px;
+        max-width: 1400px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+      
+      /* 响应式调整 */
+      @media (max-width: 1024px) {
+        .product-container {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+      }
+      
+      /* 页脚容器样式修复 */
+     
+    </style>
+</head>
+<body>
+    <!-- 引入导航栏 -->
+    <div id="navbar-container"></div>
+
+    <!-- 横幅 -->
+    <div class="container-fluid p-0 banner-parallax">
+      <div class="banner-container position-relative">
+        <img src="../../images/shouye/产品中心.jpg" alt="产品中心横幅" 
+             class="w-100 banner-image" style="height: 450px; object-fit: cover;">
+        <div class="banner-overlay position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+          <div class="text-center px-3">
+            <h1 class="banner-title display-3 fw-bold mb-4 animate__animated animate__fadeInDown">
+              产品中心
+            </h1>
+            <p class="lead text-white mb-0 animate__animated animate__fadeInUp animate__delay-1s">
+              创新激光技术 · 引领行业发展
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-container">
+        <!-- 左侧导航 -->
+        <nav class="side-nav">
+            <!-- 导航数据开始 -->
+            <table class="category-table">
+                <tr>
+                    <th colspan="2">产品中心</th>
+                </tr>
+                <tr>
+                    <td>▶</td>
+                    <td><a href="./index.html" class="nav-link2">消费类VCSEL</a></td>   
+                </tr>
+                <tr>
+                    <td>▶</td>
+                    <td><a href="../type2" class="nav-link2">数通VCSEL</a></td>
+                </tr>
+                <tr>
+                    <td>▶</td>
+                    <td><a href="../type3" class="nav-link2">数通器件</a></td>
+                </tr>
+                <tr>
+                    <td>▶</td>
+                    <td><a href="../type4" class="nav-link2">大功率</a></td>
+                </tr>
+            </table>
+        </nav>
+
+        <!-- 产品列表 -->
+        <main class="product-grid">
+            <a href="./xgl/index.html" class="product-card">
+                <div class="image-box">
+                    <img src="./xgl/小功率芯片—产品中心.png" alt="小功率芯片" loading="lazy">
+                </div>
+                <h3>小功率芯片</h3>
+            </a>
+            <a href="./jg/index.html" class="product-card">
+                <div class="image-box">
+                    <img src="./jg/结构光芯片—产品中心.png" alt="结构光芯片" loading="lazy">
+                </div>
+                <h3>结构光芯片</h3>
+            </a>
+            <a href="./TOF/index.html" class="product-card">
+                <div class="image-box">
+                    <img src="./TOF/TOF芯片—产品中心.png" alt="TOF芯片" loading="lazy">
+                </div>
+                <h3>TOF芯片</h3>
+            </a>
+        </main>
+    </div>
+
+    <!-- SVG图标定义 -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="navbar-icon" viewBox="0 0 16 16">
+            <path d="M14 10.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0 0 1h7a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 .5-.5z">
+    </svg>
+
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 加载导航栏组件
+        fetch('../../components/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+                // 初始化导航状态
+                initNavigation();
+            });
+            
+        // 初始化导航状态
+        function initNavigation() {
+            // 高亮当前页面链接
+            const currentPath = window.location.pathname;
+            document.querySelectorAll('.nav-link').forEach(link => {
+                const linkPath = new URL(link.href, window.location.origin).pathname;
+                if (currentPath === linkPath || 
+                    (currentPath.includes(linkPath) && linkPath !== '/' && linkPath !== '/index.html')) {
+                    link.classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                }
+            });
+        }
+    </script>
+ <!-- 插入页脚组件 -->
+ <div id="footer-container"></div>
+ <script src="../../js/loadFooter.js"></script>
+
+</body>
+</html>

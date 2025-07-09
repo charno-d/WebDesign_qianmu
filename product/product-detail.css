@@ -1,0 +1,459 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 164%;
+    letter-spacing: 0.32px;
+    color: #9B9B9B;
+    background-color: #F9F4EC;
+}
+
+/* 顶部导航栏 */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+.logo {
+    flex: 0 0 200px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2A5D8A;
+    text-decoration: none;
+}
+
+.main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #1A2A36;
+    font-weight: 500;
+    padding: 5px 10px;
+}
+
+.utils {
+    flex: 0 0 200px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+/* 主内容区域 */
+.main-content {
+    margin-top: 80px;
+    padding: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 产品展示区 */
+.product-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 媒体画廊 */
+.media-gallery {
+    position: relative;
+}
+
+.hero-slide {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.hero-slide:hover {
+    transform: scale(1.02);
+}
+
+.hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.thumbnail-track {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.thumbnail-track img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.thumbnail-track img:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.thumbnail-track img.active {
+    border-color: #2A5D8A;
+}
+
+/* 产品信息 */
+.product-info h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #1A2A36;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: "Syne", sans-serif;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.badge {
+    background: #2A5D8A;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(42, 93, 138, 0.3);
+}
+
+/* 产品详情区域 */
+.product-details {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-details h2 {
+    font-family: "Syne", sans-serif;
+    font-size: 1.8em;
+    color: #1A2A36;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.product-details p {
+    color: #777F81;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* 规格参数表格 */
+.specs-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 20px 0;
+}
+
+.specs-table th,
+.specs-table td {
+    padding: 12px 15px;
+    border: 1px solid #E8F0F1;
+}
+
+.specs-table th {
+    background-color: #F9F4EC;
+    font-weight: 600;
+    color: #1A2A36;
+    text-align: left;
+}
+
+.specs-table tr:hover td {
+    background-color: #F9F4EC;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .product-showcase {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .product-info h1 {
+        font-size: 2em;
+    }
+
+    .badges {
+        gap: 8px;
+    }
+
+    .badge {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+.intro {
+    font-size: 1.1em;
+    color: #1A2A36;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.variant-group {
+    margin-bottom: 20px;
+}
+
+.variant-group h3 {
+    margin-bottom: 10px;
+    color: #1A2A36;
+}
+
+.variant-options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.variant-option {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.variant-option.active {
+    border-color: #2A5D8A;
+    background: #F0F5FA;
+    color: #2A5D8A;
+}
+
+/* 详情展示区 */
+.details-section {
+    margin-top: 40px;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+    border-bottom-color: #2A5D8A;
+    color: #2A5D8A;
+}
+
+.content-panel {
+    padding: 20px 0;
+}
+
+.editor-content {
+    line-height: 1.8;
+}
+
+.editor-content h2 {
+    margin-bottom: 20px;
+    color: #1A2A36;
+}
+
+.editor-content p {
+    margin-bottom: 10px;
+}
+
+.editor-content img {
+    max-width: 100%;
+    margin: 20px 0;
+}
+
+/* 规格参数表格 */
+.specs-section {
+    margin-top: 40px;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.specs-header {
+    margin-bottom: 20px;
+}
+
+.specs-section h2 {
+    color: #1A2A36;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.specs {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.specs {
+    border: 1px solid #ddd;
+}
+
+.specs thead th {
+    background-color: #F0F5FA;
+    color: #1A2A36;
+    font-weight: 600;
+    text-align: center;
+    padding: 12px 8px;
+    border-bottom: 2px solid #2A5D8A;
+    border-right: 1px solid #ddd;
+    white-space: nowrap;
+}
+
+.specs tbody tr {
+    border-bottom: 1px solid #eee;
+}
+
+.specs tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.specs tbody tr:hover {
+    background-color: #F0F5FA;
+}
+
+.specs td {
+    padding: 10px 8px;
+    vertical-align: middle;
+    text-align: center;
+    border-right: 1px solid #ddd;
+}
+
+.specs td.action-buttons {
+    white-space: nowrap;
+    text-align: center;
+    border-right: none;
+}
+
+.btn {
+    color: #2A5D8A;
+    border: none;
+    background: transparent;
+    padding: 4px 8px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: underline;
+    font-size: 0.9em;
+    margin: 0 3px;
+}
+
+.btn:hover {
+    color: #3A7DB5;
+    text-decoration: underline;
+}
+
+.btn-sm {
+    font-size: 0.85em;
+}
+
+.download-btn {
+    color: #2A5D8A;
+}
+
+.preview-btn {
+    color: #2A5D8A;
+}
+
+.preview-btn:hover, .download-btn:hover {
+    color: #3A7DB5;
+}
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    .specs {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .product-showcase {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-nav {
+        display: none;
+    }
+    
+    .header {
+        justify-content: space-between;
+    }
+    
+    .specs-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

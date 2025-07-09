@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品详情 </title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../product-detail.css">
+    <style>
+      /* 导航栏背景颜色 */
+      #primary-header {
+        background-color: #2A5D8A !important;
+      }
+    
+      /* 导航链接文字颜色 */
+      #primary-header .navbar-nav .nav-item .nav-link {
+        color: #FFFFFF !important;
+      }
+    
+      /* 导航链接悬停和激活状态 */
+      #primary-header .navbar-nav .nav-item .nav-link:hover,
+      #primary-header .navbar-nav .nav-item .nav-link.active {
+        color: #87CEEB !important;
+      }
+    
+      /* 侧边菜单背景色 */
+      .offcanvas {
+        background-color: #2A5D8A !important;
+      }
+    
+      /* 关闭按钮颜色 */
+      .btn-close {
+        filter: invert(1) !important;
+      }
+      
+      /* 页脚容器样式修复 */
+      #footer-container .container {
+        display: block !important;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      
+      #footer .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    </style>
+</head>
+<body>
+    <!-- 引入导航栏 -->
+    <div id="navbar-container"></div>
+
+    <!-- 主内容区域 -->
+    <main class="main-content">
+        <div class="product-showcase">
+            <!-- 左侧媒体展示 -->
+            <div class="media-gallery">
+                <div class="hero-slide">
+                    <img src="./小功率芯片—产品中心.png" alt="产品主图">
+                </div>
+                <div class="thumbnail-track">
+                    <img src="./image.png" alt="缩略图1" class="active">
+                  
+                </div>
+            </div>
+
+            <!-- 右侧产品信息 -->
+            <div class="product-info">
+                <h1>小功率芯片
+</h1>
+                <div class="badges">
+                    <span class="badge">消费类VCSEL</span>
+                     
+                </div>
+                <p class="intro">
+                    消费电子类产品可应用于3D感测、人脸识别、无线蓝牙耳机、机器视觉等领域。
+                </p>
+
+                <!-- 产品特性 -->
+                
+                </div>
+            </div>
+        </div>
+
+        <!-- 规格参数表格 -->
+        <section class="specs-section">
+            <div class="specs-header">
+                <h2>规格参数</h2>
+            </div>
+            <table class="specs">
+                <thead>
+                    <tr>
+                        <th>产品编号</th>
+                        <th>产品名称</th>
+                        <th>产品类型</th>
+                        <th>工作电流</th>
+                        <th>产品波长</th>
+                        <th>产品功率</th>
+                        <th>产品发散角</th>
+                        <th>规格书</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SV121225</td>
+                        <td>QM_20e_940nm_VCSEL</td>
+                        <td>小功率芯片</td>
+                        <td>250mA</td>
+                        <td>940nm</td>
+                        <td>200mW</td>
+                        <td>20°</td>
+                        <td class="action-buttons">
+                            <a href="./1.pdf" class="btn btn-sm preview-btn" target="_blank">预览</a>
+                            <a href="./1.pdf" class="btn btn-sm download-btn" download>下载</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SV122622</td>
+                        <td>QM_3e_940nm_VCSEL</td>
+                        <td>小功率芯片</td>
+                        <td>36mA</td>
+                        <td>940nm</td>
+                        <td>30mW</td>
+                        <td>20°</td>
+                        <td class="action-buttons">
+                            <a href="./2.pdf" class="btn btn-sm preview-btn" target="_blank">预览</a>
+                            <a href="./2.pdf" class="btn btn-sm download-btn" download>下载</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SV121522</td>
+                        <td>QM_Singlet_940nm_VCSEL</td>
+                        <td>小功率芯片</td>
+                        <td>12mA</td>
+                        <td>940nm</td>
+                        <td>10mW</td>
+                        <td>22°</td>
+                        <td class="action-buttons">
+                            <a href="./3.pdf" class="btn btn-sm preview-btn" target="_blank">预览</a>
+                            <a href="./3.pdf" class="btn btn-sm download-btn" download>下载</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SV121521</td>
+                        <td>QM_Singlet_940nm_VCSEL</td>
+                        <td>小功率芯片</td>
+                        <td>6mA</td>
+                        <td>940nm</td>
+                        <td>5mW</td>
+                        <td>20°</td>
+                        <td class="action-buttons">
+                            <a href="./4.pdf" class="btn btn-sm preview-btn" target="_blank">预览</a>
+                            <a href="./4.pdf" class="btn btn-sm download-btn" download>下载</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        
+    </main>
+
+    <script src="../../../js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 加载导航栏组件
+        fetch('../../../components/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+    
+    <!-- 加载页脚组件 -->
+    <div id="footer-container"></div>
+    <script>
+        // 确保加载Bootstrap图标
+        if (!document.querySelector('link[href*="bootstrap-icons"]')) {
+            const iconLink = document.createElement('link');
+            iconLink.rel = 'stylesheet';
+            iconLink.href = 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css';
+            document.head.appendChild(iconLink);
+        }
+
+        // 加载页脚组件
+        fetch('../../../components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+</body>
+</html>

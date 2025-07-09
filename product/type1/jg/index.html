@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品详情 </title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../product-detail.css">
+    <style>
+      /* 导航栏背景颜色 */
+      #primary-header {
+        background-color: #2A5D8A !important;
+      }
+    
+      /* 导航链接文字颜色 */
+      #primary-header .navbar-nav .nav-item .nav-link {
+        color: #FFFFFF !important;
+      }
+    
+      /* 导航链接悬停和激活状态 */
+      #primary-header .navbar-nav .nav-item .nav-link:hover,
+      #primary-header .navbar-nav .nav-item .nav-link.active {
+        color: #87CEEB !important;
+      }
+    
+      /* 侧边菜单背景色 */
+      .offcanvas {
+        background-color: #2A5D8A !important;
+      }
+    
+      /* 关闭按钮颜色 */
+      .btn-close {
+        filter: invert(1) !important;
+      }
+    </style>
+</head>
+<body>
+    <!-- 引入导航栏 -->
+    <div id="navbar-container"></div>
+
+    <!-- 主内容区域 -->
+    <main class="main-content">
+        <div class="product-showcase">
+            <!-- 左侧媒体展示 -->
+            <div class="media-gallery">
+                <div class="hero-slide">
+                    <img src="./结构光芯片—产品中心.png" alt="产品主图">
+                </div>
+                <div class="thumbnail-track">
+                    <img src="./image.png" alt="缩略图1" class="active">
+                  
+                </div>
+            </div>
+
+            <!-- 右侧产品信息 -->
+            <div class="product-info">
+                <h1>结构光芯片
+
+</h1>
+                <div class="badges">
+                    <span class="badge">消费类VCSEL
+                    </span>
+                     
+                </div>
+                <p class="intro">
+                    应用于人脸识别、空间测距、三维重建、AR(增强现实)等领域。
+                </p>
+
+                <!-- 产品特性 -->
+                
+                </div>
+            </div>
+        </div>
+
+        <!-- 规格参数表格 -->
+        <section class="specs-section">
+            <div class="specs-header">
+                <h2>规格参数</h2>
+            </div>
+            <table class="specs">
+                <thead>
+                    <tr>
+                        <th>产品编号</th>
+                        <th>产品名称</th>
+                        <th>产品类型</th>
+                        <th>工作电流</th>
+                        <th>产品波长</th>
+                        <th>产品功率</th>
+                        <th>产品发散角</th>
+                        <th>规格书</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SV22X424
+                        </td>
+                        <td>QQM_216e_850nm_VCSEL                        </td>
+                        <td>结构光芯片
+                        </td>
+                        <td>1.1A
+                        </td>
+                        <td>850nm
+                        </td>
+                        <td>0.85W
+                        </td>
+                        <td>20°</td>
+                        <td class="action-buttons">
+                            <a href="./1.pdf" class="btn btn-sm preview-btn" target="_blank">预览</a>
+                            <a href="./1.pdf" class="btn btn-sm download-btn" download>下载</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SV222121
+                        </td>
+                        <td>QM_1059e_850nm_VCSEL
+                        </td>
+                        <td>结构光芯片
+                        </td>
+                        <td>1.65A
+                        </td>
+                        <td>850nm
+                        </td>
+                        <td>1.1W
+                        </td>
+                        <td>20°</td>
+                        <td class="action-buttons">
+                            <a href="./2.pdf" class="btn btn-sm preview-btn" target="_blank">预览</a>
+                            <a href="./2.pdf" class="btn btn-sm download-btn" download>下载</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SV12Y321
+                        </td>
+                        <td>QM_216e_940nm_VCSEL
+                        </td>
+                        <td>结构光芯片
+                        </td>
+                        <td>1.1A
+                        </td>
+                        <td>940nm</td>
+                        <td>0.85W
+                        </td>
+                        <td>20°</td>
+                        <td class="action-buttons">
+                            <a href="./3.pdf" class="btn btn-sm preview-btn" target="_blank">预览</a>
+                            <a href="./3.pdf" class="btn btn-sm download-btn" download>下载</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SV120522
+                        </td>
+                        <td>QM_181e_940nm_VCSEL
+                          L</td>
+                        <td>结构光芯片
+                        </td>
+                        <td>1.0A
+                        </td>
+                        <td>940nm</td>
+                        <td>0.8W
+                        </td>
+                        <td>20°</td>
+                        <td class="action-buttons">
+                            <a href="./4.pdf" class="btn btn-sm preview-btn" target="_blank">预览</a>
+                            <a href="./4.pdf" class="btn btn-sm download-btn" download>下载</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        
+    </main>
+    <div id="footer-container"></div>
+    <script src="../../../js/loadFooter.js"></script>
+
+    <script src="../../../js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 加载导航栏组件
+        fetch('../../../components/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

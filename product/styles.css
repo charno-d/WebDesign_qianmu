@@ -1,0 +1,315 @@
+/* 重置和基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 164%;
+    letter-spacing: 0.32px;
+    color: #4A4A4A;
+    background-color: #F8F9FA;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* 导航栏样式 */
+#primary-header {
+    background-color: #F9F4EC;
+}
+
+#primary-header .navbar-nav a.nav-link2 {
+    text-transform: uppercase;
+    color: #4E4C49;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+#primary-header .navbar-nav a.nav-link2:focus {
+    color: #4E4C49;
+}
+
+#pr
+
+.navbar-toggler {
+    padding: 0;
+    border: none;
+}
+
+.offcanvas {
+    background-color: #F9F4EC;
+}
+
+@media (max-width: 999px) {
+    #primary-header .navbar-nav a.nav-link2 {
+        font-size: 30px;
+        padding: 15px 0 15px 0 !important;
+    }
+}
+
+/* 容器布局 */
+.product-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* 页脚容器样式修复 */
+#footer-container {
+    clear: both;
+    width: 100%;
+}
+
+#footer-container .container {
+    display: block !important;
+    max-width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    padding-right: var(--bs-gutter-x, 0.75rem);
+}
+
+#footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--bs-gutter-x) * -0.5);
+    margin-right: calc(var(--bs-gutter-x) * -0.5);
+}
+
+/* 左侧导航样式 */
+.side-nav {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.category-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+.category-table th {
+    padding: 15px 10px;
+    text-align: left;
+    color: #2A5D8A;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-bottom: 2px solid #E8E8E8;
+}
+
+.nav-link2 {
+    padding: 12px 15px;
+    display: block;
+    color: #4A4A4A;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    position: relative;
+    font-weight: 500;
+}
+
+.nav-link2:hover {
+    background-color: #2A5D8A;
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.nav-link2.active {
+    background-color: #2A5D8A;
+    color: #fff;
+    font-weight: 500;
+}
+
+/* 产品网格样式 */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 10px;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.image-box {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-card:hover .image-box::after {
+    opacity: 1;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .image-box img {
+    transform: scale(1.08);
+}
+
+.product-card h3 {
+    padding: 20px;
+    font-size: 1.2em;
+    color: #2A5D8A;
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+}
+
+.product-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background-color: #2A5D8A;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-card:hover h3::after {
+    opacity: 1;
+}
+
+/* 横幅样式 */
+.banner-container {
+    position: relative;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+.banner-container img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(42, 93, 138, 0.8) 0%, rgba(42, 93, 138, 0.6) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-title {
+    color: white;
+    font-size: 3.5em;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+    .product-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .side-nav {
+        position: static;
+        margin-bottom: 20px;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .banner-title {
+        font-size: 2.5em;
+    }
+    
+    .banner-container img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .banner-title {
+        font-size: 2em;
+    }
+    
+    .banner-container img {
+        height: 200px;
+    }
+    
+    .product-card h3 {
+        font-size: 1.1em;
+        padding: 15px;
+    }
+}

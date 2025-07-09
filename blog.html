@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>新闻中心 - 仟目激光</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <!--Bootstrap ================================================== -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!--vendor css ================================================== -->
+    <link rel="stylesheet" type="text/css" href="css/vendor.css">
+
+    <!--Link Swiper's CSS ================================================== -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/Swiper/9.4.1/swiper-bundle.min.css" />
+
+    <!-- Style Sheet ================================================== -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Google Fonts ================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap"
+        rel="stylesheet">
+    
+    <!-- 新闻列表样式 -->
+    <style>
+        /* 新闻列表样式 */
+        .news-item {
+            border: 1px solid #E3F2FD;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            background: #fff;
+        }
+
+        .news-item:hover {
+            box-shadow: 0 5px 15px rgba(42, 93, 138, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .news-item .news-image {
+            height: 240px;
+            overflow: hidden;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .news-item .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .news-item:hover .news-image img {
+            transform: scale(1.05);
+        }
+
+        .news-item .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-item .news-date {
+            color: #87CEEB;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-item .news-title {
+            color: #2A5D8A;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .news-item .news-excerpt {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .news-item .read-more {
+            color: #2A5D8A;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .news-item .read-more:hover {
+            color: #87CEEB;
+        }
+
+        /* 分页样式 */
+        .pagination .page-link {
+            color: #2A5D8A;
+            border-color: #E3F2FD;
+            padding: 0.75rem 1rem;
+        }
+
+        .pagination .page-link:hover {
+            background-color: #E3F2FD;
+            border-color: #2A5D8A;
+            color: #2A5D8A;
+        }
+
+        .pagination .page-item.active .page-link {
+            background-color: #2A5D8A;
+            border-color: #2A5D8A;
+            color: #fff;
+        }
+
+        /* 页面标题样式 */
+        .page-title {
+            background: linear-gradient(90deg, #2A5D8A 0%, #87CEEB 100%);
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .page-title h1 {
+            color: #fff;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+  <!-- 导航栏容器 -->
+  <div id="navbar-container"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol xmlns="http://www.w3.org/2000/svg" id="send" viewBox="0 0 24 24">
+            <g fill="none">
+                <path
+                    d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                <path fill="currentColor"
+                    d="m21.433 4.861l-6 15.5a1 1 0 0 1-1.624.362l-3.382-3.235l-2.074 2.073a.5.5 0 0 1-.853-.354v-4.519L2.309 9.723a1 1 0 0 1 .442-1.691l17.5-4.5a1 1 0 0 1 1.181 1.329ZM19 6.001L8.032 13.152l1.735 1.66L19 6Z" />
+            </g>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="quote" viewBox="0 0 16 16">
+            <path fill="currentColor"
+                d="M7 7v7H0V6.9c0-4.8 4.5-5.4 4.5-5.4l.6 1.4s-2 .3-2.4 1.9C2.3 6 3.1 7 3.1 7zm9 0v7H9V6.9c0-4.8 4.5-5.4 4.5-5.4l.6 1.4s-2 .3-2.4 1.9c-.4 1.2.4 2.2.4 2.2z" />
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="play" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M9.5 15.584V8.416a.5.5 0 0 1 .77-.42l5.576 3.583a.5.5 0 0 1 0 .842l-5.576 3.584a.5.5 0 0 1-.77-.42Z" />
+            <path fill="currentColor"
+                d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12m11-9.5A9.5 9.5 0 0 0 2.5 12a9.5 9.5 0 0 0 9.5 9.5a9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5" />
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="navbar-icon" viewBox="0 0 16 16">
+            <path
+                d="M14 10.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0 0 1h7a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 .5-.5z" />
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="location" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7" />
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="phone" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="m16.556 12.906l-.455.453s-1.083 1.076-4.038-1.862s-1.872-4.014-1.872-4.014l.286-.286c.707-.702.774-1.83.157-2.654L9.374 2.86C8.61 1.84 7.135 1.705 6.26 2.575l-1.57 1.56c-.433.432-.723.99-.688 1.61c.09 1.587.808 5 4.812 8.982c4.247 4.222 8.232 4.39 9.861 4.238c.516-.048.964-.31 1.325-.67l1.42-1.412c.96-.953.69-2.588-.538-3.255l-1.91-1.039c-.806-.437-1.787-.309-2.417.317" />
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="chevron-back-circle" viewBox="0 0 512 512">
+            <path fill="currentColor"
+                d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208s208-93.13 208-208S370.87 48 256 48m35.31 292.69a16 16 0 1 1-22.62 22.62l-96-96a16 16 0 0 1 0-22.62l96-96a16 16 0 0 1 22.62 22.62L206.63 256Z" />
+        </symbol>
+    </svg>
+
+  
+    <!-- 美化后的新闻中心横幅 -->
+    <div class="container-fluid p-0 position-relative">
+      <div class="banner-container position-relative overflow-hidden" style="height: 450px;">
+        <img src="images/shouye/新闻中心.jpg" alt="新闻中心横幅" 
+             class="img-fluid w-100 h-100" style="object-fit: cover; object-position: center;">
+        
+        <!-- 半透明遮罩层 -->
+        <div class="position-absolute top-0 start-0 w-100 h-100" 
+             style="background: linear-gradient(to right, rgba(42, 93, 138, 0.8), rgba(42, 93, 138, 0.5));"></div>
+        
+        <!-- 优化后的横幅文字内容 -->
+        <div class="position-absolute top-50 start-0 w-100 translate-middle-y text-center px-3">
+          <div class="container">
+            <div class="bg-dark bg-opacity-50 d-inline-block p-4 rounded-3 animate__animated animate__fadeIn">
+              <h1 class="display-2 fw-bold text-white mb-3" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+                新闻中心
+              </h1>
+              <p class="lead text-white mb-4 animate__animated animate__fadeInUp animate__delay-1s" 
+                 style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5); font-weight: 500;">
+                了解仟目激光最新动态、行业资讯和技术突破
+              </p>
+              <a href="#news-list" 
+                 class="btn btn-primary btn-lg rounded-pill px-4 animate__animated animate__fadeInUp animate__delay-2s"
+                 style="box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                <i class="bi bi-newspaper me-2"></i>查看最新资讯
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 添加必要的CSS -->
+    <style>
+      .banner-container {
+        transition: all 0.5s ease;
+      }
+      .banner-container:hover img {
+        transform: scale(1.05);
+      }
+    </style>
+    
+    <!-- 添加动画库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+   
+
+    <!-- 新闻列表 - 横栏布局，纵向排列 -->
+    <div class="container">
+        <div class="row">
+        <!-- 新闻项目 1 -->
+        <div class="col-12 mb-4">
+            <article class="news-item d-flex flex-row">
+                <div class="news-image me-4" style="flex: 0 0 300px;">
+                    <img src="./news/1/image.png" alt="新闻图片" class="img-fluid" style="height:100%;">
+                </div>
+                <div class="news-content">
+                    <div class="news-date">2024-05-14</div>
+                    <h3 class="news-title">喜讯︱仟目激光荣登江苏省潜在独角兽企业榜单</h3>
+                    <p class="news-excerpt">
+                        近日，江苏省生产力中心公布了2024年江苏独角兽企业、潜在独角兽企业评估结果，徐州仟目科技集团有限公司（简称"仟目激光"）凭借强大研发实力、快速成长能力及巨大发展潜力，成功入选江苏省潜在独角兽企业榜单。</p>
+                    <a href="./news/1/index.html" class="read-more">阅读更多 →</a>
+                </div>
+            </article>
+        </div>
+
+            <!-- 新闻项目 2 -->
+            <div class="col-12 mb-4">
+                <article class="news-item d-flex flex-row">
+                    <div class="news-image me-4" style="flex: 0 0 300px;">
+                        <img src="./uploadfile/2022/0514/20220514124653326.png" alt="新闻图片" class="img-fluid" style="height:100%;">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">2022-05-14</div>
+                        <h3 class="news-title">数据通信和移动应用"双翼驱动"，托举VCSEL"乘势高飞"</h3>
+                        <p class="news-excerpt">仟目激光凭借在VCSEL技术上的深厚积累，成功将其应用拓展到数据通信和移动应用两大领域。公司的VCSEL产品在高速光通信和3D感应等应用中表现出色，为公司的快速发展提供了强劲动力。</p>
+                        <a href="./news/2/index.html" class="read-more">阅读更多 →</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- 新闻项目 3 -->
+            <div class="col-12 mb-4">
+                <article class="news-item d-flex flex-row">
+                    <div class="news-image me-4" style="flex: 0 0 300px;">
+                        <img src="./uploadfile/2022/0303/20220303114654657.png" alt="新闻图片" class="img-fluid" style="height:100%;">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">2022-03-03</div>
+                        <h3 class="news-title">喜讯！我司成功入选"湖北双创战略团队"</h3>
+                        <p class="news-excerpt">仟目激光凭借优秀的创新能力和发展潜力，成功入选"湖北双创战略团队"。这一荣誉不仅是对公司过去成就的肯定，更将为公司未来发展带来更多政策支持和资源倾斜，有助于公司进一步提升创新能力和市场竞争力。</p>
+                        <a href="./news/3" class="read-more">阅读更多 →</a>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- 新闻项目 4 -->
+            <div class="col-12 mb-4">
+                <article class="news-item d-flex flex-row">
+                    <div class="news-image me-4" style="flex: 0 0 300px;">
+                        <img src="./uploadfile/2022/0303/20220303110746388.png" alt="新闻图片" class="img-fluid" style="height:100%;">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">2022-03-03</div>
+                        <h3 class="news-title">武汉仟目激光获得OPPO关联公司战略投资</h3>
+                        <p class="news-excerpt">武汉仟目激光科技有限公司近日宣布获得OPPO关联公司的战略投资，这标志着公司在发展道路上迈出重要一步。此次投资将为公司带来更多资源和发展机遇，有助于公司进一步扩大市场份额和提升技术实力。</p>
+                        <a href="./news/4" class="read-more">阅读更多 →</a>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- 新闻项目 5 -->
+            <div class="col-12 mb-4">
+                <article class="news-item d-flex flex-row">
+                    <div class="news-image me-4" style="flex: 0 0 300px;">
+                        <img src="./uploadfile/2021/0512/20210512012529195.png" alt="新闻图片" class="img-fluid" style="height:100%;">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">2021-05-12</div>
+                        <h3 class="news-title">祝贺我司获评武汉市科技"小巨人"企业</h3>
+                        <p class="news-excerpt">仟目激光凭借在光电子领域的创新能力和市场表现，成功获评武汉市科技"小巨人"企业。这一荣誉是对公司技术创新和发展潜力的重要认可，将助力公司在未来发展中获得更多支持和机遇。</p>
+                        <a href="./news/5" class="read-more">阅读更多 →</a>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- 新闻项目 6 -->
+            <div class="col-12 mb-4">
+                <article class="news-item d-flex flex-row">
+                    <div class="news-image me-4" style="flex: 0 0 300px;">
+                        <img src="./uploadfile/2021/1122/20211122022958632.png" alt="新闻图片" class="img-fluid" style="height:100%;">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">2021-11-22</div>
+                        <h3 class="news-title">喜讯！热烈祝贺我公司获得国家级2021年高新技术企业认定</h3>
+                        <p class="news-excerpt">经过严格评审，仟目激光成功获得国家级2021年高新技术企业认定，这是对公司技术创新能力和研发实力的高度认可。该认定不仅将为公司带来政策支持和税收优惠，更将进一步提升公司在行业内的影响力和竞争力。</p>
+                        <a href="./news/6" class="read-more">阅读更多 →</a>
+                    </div>
+                </article>
+            </div>
+
+            
+
+    </div>
+    </div>
+
+    <!-- 页脚容器 - 放在新闻容器之外 -->
+    <div id="footer-container" style="width: 100%;"></div>
+
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/loadNavbar.js"></script>
+    <script src="js/loadFooter.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

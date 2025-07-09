@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>关于仟目科技 - 企业简介</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="author" content="仟目科技">
+  <meta name="keywords" content="仟目科技,激光技术,企业简介">
+  <meta name="description" content="仟目科技集团有限公司简介与发展历程">
+
+  <!--Bootstrap ================================================== -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+  <!--vendor css ================================================== -->
+  <link rel="stylesheet" type="text/css" href="css/vendor.css">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+  <!-- Style Sheet ================================================== -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- Link Swiper's CSS ================================================== -->
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/Swiper/9.4.1/swiper-bundle.min.css" />
+
+  <!-- Google Fonts ================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* 全局颜色变量 */
+    :root {
+      --primary-color: #2A5D8A;
+      --secondary-color: #87CEEB;
+      --text-color: #333;
+      --background-color: #f4f7f9;
+      --card-background: #ffffff;
+    }
+
+    /* 全局字体和排版 */
+    body {
+      font-family: 'Poppins', 'Microsoft YaHei', sans-serif;
+      color: var(--text-color);
+      background-color: var(--background-color);
+      line-height: 1.6;
+    }
+
+    /* 导航栏样式 */
+    #primary-header {
+      background-color: var(--primary-color) !important;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    #primary-header .navbar-nav .nav-item .nav-link {
+      color: #FFFFFF !important;
+      transition: color 0.3s ease;
+    }
+    
+    #primary-header .navbar-nav .nav-item .nav-link:hover,
+    #primary-header .navbar-nav .nav-item .nav-link.active {
+      color: var(--secondary-color) !important;
+    }
+    
+    .offcanvas {
+      background-color: var(--primary-color) !important;
+    }
+    
+    .btn-close {
+      filter: invert(1) !important;
+    }
+
+    /* 页面区块样式 */
+    .about-section {
+      padding: 60px 0;
+      background-color: transparent;
+    }
+
+    /* 横幅样式 */
+    #about-hero {
+      position: relative;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+      height: 500px;
+    }
+
+    .hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url(images/shouye/关于我们.jpg) no-repeat center center;
+      background-size: cover;
+      transform: scale(1.05);
+      transition: transform 8s ease;
+      z-index: 0;
+    }
+    
+    #about-hero:hover .hero-background {
+      transform: scale(1.0);
+    }
+
+    .hero-overlay {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(42, 93, 138, 0.9), rgba(0, 0, 0, 0.7));
+      z-index: 1;
+    }
+
+    .z-2 {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .min-vh-50 {
+      min-height: 50vh;
+    }
+    
+    .letter-spacing-2 {
+      letter-spacing: 2px;
+    }
+    
+    .animate-up {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    
+    .animate-up-delay-1 {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease forwards 0.2s;
+    }
+    
+    .animate-up-delay-2 {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease forwards 0.4s;
+    }
+    
+    .animate-up-delay-3 {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease forwards 0.6s;
+    }
+    
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .scroll-smooth {
+      transition: all 0.3s ease;
+    }
+    
+    .scroll-smooth:hover {
+      transform: translateY(5px);
+    }
+
+    /* 团队成员样式 */
+    .team-member {
+      text-align: center;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-10px);
+    }
+
+    .team-member img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--primary-color);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .team-member h4 {
+      margin-top: 15px;
+      color: var(--primary-color);
+    }
+
+    /* 时间轴样式 */
+    .timeline-section {
+      background-color: var(--background-color);
+      position: relative;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 0;
+    }
+
+    .timeline-line {
+      position: absolute;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+      z-index: 1;
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 20px 40px;
+      box-sizing: border-box;
+    }
+
+    .timeline-item.left {
+      left: 0;
+      text-align: right;
+    }
+
+    .timeline-item.right {
+      left: 50%;
+      text-align: left;
+    }
+
+    .timeline-content {
+      position: relative;
+      background-color: var(--card-background);
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      border-left: 5px solid var(--primary-color);
+    }
+
+    .timeline-content:hover {
+      transform: scale(1.03);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    }
+
+    .timeline-year {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 5px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      z-index: 2;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .timeline-detail h4 {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .timeline-detail p {
+      color: #666;
+    }
+
+    /* 企业文化 */
+    .core-values .col-md-4 {
+      text-align: center;
+      padding: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    .core-values .col-md-4:hover {
+      transform: translateY(-10px);
+    }
+
+    .core-values .col-md-4 h4 {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    /* 企业愿景 */
+    .vision-section {
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      color: white;
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .timeline-line {
+        left: 30px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding: 20px 20px 20px 80px;
+        text-align: left;
+      }
+
+      .timeline-item.left, 
+      .timeline-item.right {
+        left: 0;
+      }
+
+      .timeline-year {
+        left: -10px;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 页面内容 -->
+  <section id="about-hero" class="position-relative overflow-hidden">
+    <div class="hero-background"></div>
+    <div class="hero-overlay"></div>
+    <div class="container position-relative z-2">
+      <div class="row min-vh-50 align-items-center py-5">
+        <div class="col-12 text-center">
+          <h6 class="text-white text-uppercase mb-3 letter-spacing-2 animate-up">创新科技 引领未来</h6>
+          <h1 class="display-4 fw-bold text-white mb-4 animate-up-delay-1">关于仟目激光</h1>
+          <p class="lead text-white mb-4 animate-up-delay-2">引领激光技术创新，推动产业智能升级</p>
+          <div class="animate-up-delay-3">
+            <a href="#company-intro" class="btn btn-outline-light rounded-pill px-4 py-2 scroll-smooth">
+              了解更多
+              <i class="bi bi-arrow-down ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h2 class="mb-4">公司简介</h2>
+          <p>
+            仟目激光成立于2017年，致力于成为全球领先的半导体激光芯片企业，聚焦于高可靠、高功率、高速率半导体激光器芯片、器件的设计研发制造销售，拥有覆盖化合物半导体激光器芯片设计、外延设计、外延材料(EPI)、制造(FAB)工艺、器件封装(PKG)、测试表征与可靠性分析等全套工程化、产业化关键技术，以AI IDC、机器人、高端制造等高增长行业为核心引擎，为全球客户提供高性能、高可靠性的产品及服务。
+          </p>
+          <p>
+            公司已形成由VCSEL 3DS芯片、VCSEL数通芯片、硅光CW光源芯片、高功率泵浦源芯片等构成的多系列产品矩阵，产品广泛应用于AI IDC、3D传感、机器人、工业加工、光通信等领域。
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <img src="images/about.png" alt="仟目科技" class="img-fluid rounded shadow">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section timeline-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2>企业发展历程</h2>
+          <p>追求卓越，不断创新</p>
+        </div>
+        <div class="col-12">
+          <div class="timeline">
+            <div class="timeline-line"></div>
+  
+            <div class="timeline-item left">
+              <div class="timeline-content">
+                <span class="timeline-year">2025年</span>
+                <div class="timeline-detail">
+                  <h4>大功率芯片投产元年</h4>
+                  <p>硅光CW光源产品研发成功，并交付客户测试</p>
+                  <p>大功率泵浦源芯片产品投产成功</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="timeline-item right">
+              <div class="timeline-content">
+                <span class="timeline-year">2024年</span>
+                <div class="timeline-detail">
+                  <h4>持续发展阶段</h4>
+                  <p>公司更名为"徐州仟目集团"</p>
+                  <p>荣登江苏省潜在独角兽榜单</p>
+                  <p>完成>3000万颗芯片交付</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="timeline-item left">
+              <div class="timeline-content">
+                <span class="timeline-year">2023年</span>
+                <div class="timeline-detail">
+                  <h4>启动IDM阶段</h4>
+                  <p>获得B轮亿元融资</p>
+                  <p>启动IDM模式建设历程</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="timeline-item right">
+              <div class="timeline-content">
+                <span class="timeline-year">2022年</span>
+                <div class="timeline-detail">
+                  <h4>量产启动阶段</h4>
+                  <p>50G PAM4通过头部客户性能和可靠性测试</p>
+                  <p>3Ds芯片和数通芯片实现>1000万颗芯片交付</p>
+                  <p>入选湖北双创战略团队</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="timeline-item left">
+              <div class="timeline-content">
+                <span class="timeline-year">2021年</span>
+                <div class="timeline-detail">
+                  <h4>销售布局阶段</h4>
+                  <p>深圳成立销售分公司</p>
+                  <p>完成A+轮5000万元融资</p>
+                  <p>获评"武汉市科技小巨人"企业</p>
+                  <p>国家级高新技术企业认证</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="timeline-item right">
+              <div class="timeline-content">
+                <span class="timeline-year">2020年</span>
+                <div class="timeline-detail">
+                  <h4>新产品开发阶段</h4>
+                  <p>数通VCSEL芯片发布，并通过头部客户验证</p>
+                  <p>3Ds传感芯片批量出货，进入头部客户核心供应链</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="timeline-item left">
+              <div class="timeline-content">
+                <span class="timeline-year">2019年</span>
+                <div class="timeline-detail">
+                  <h4>研发投入阶段</h4>
+                  <p>3Ds传感2代芯片实现头部客户认证</p>
+                  <p>成立美国子公司</p>
+                  <p>完成pre A轮5000万融资</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="timeline-item right">
+              <div class="timeline-content">
+                <span class="timeline-year">2018年</span>
+                <div class="timeline-detail">
+                  <h4>研发启动阶段</h4>
+                  <p>国内首家6英寸砷化镓晶圆设计投产</p>
+                  <p>3D传感1代芯片发布量产</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="timeline-item left">
+              <div class="timeline-content">
+                <span class="timeline-year">2017年</span>
+                <div class="timeline-detail">
+                  <h4>创始阶段</h4>
+                  <p>仟目激光注册成立</p>
+                  <p>获得天使轮3000万元融资</p>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2>使命</h2>
+          <p>创新引领，压强投入，聚焦高端半导体激光器芯片；  匠心产品，高效服务，成为客户最信赖的合作伙伴。
+          </p>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="p-4">
+            <h4>理念</h4>
+            <p>奋斗者文化践行者</p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="p-4">
+            <h4>价值观</h4>
+            <p>长期主义 客户至上 力出一孔 自我批判
+
+
+
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="p-4">
+            <h4>愿景</h4>
+            <p>让光更有力量
+
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚容器 -->
+  <div id="footer-container"></div>
+
+  <!-- 必要的JavaScript文件 -->
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/loadNavbar.js"></script>
+  <script src="js/loadFooter.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
